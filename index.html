@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClothingFinder</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        .navbar-custom {
+            height: 65px;
+            border: 1px solid #ddd;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .brand-name {
+            font-family: Georgia, serif;
+            font-size: 19px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        .logo {
+            width: 30px;
+            height: 30px;
+            background-color: #087ff5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom bg-white">
+        <div class="container-fluid px-4">
+            <!-- Logo + Nombre -->
+            <div class="d-flex align-items-center gap-3">
+                <div class="logo">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="17" rx="2" />
+                        <path d="M8 4V2h8v2" />
+                        <path d="M8 9h8" />
+                        <path d="M8 13h5" />
+                    </svg>
+                </div>
+                <span class="brand-name"><a href="index.html">ClothingFinder</a></span>
+            </div>
+
+            <!-- Botón hamburguesa para móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Menú con dropdown -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Clientes
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="registrarCliente.html" data-bs-toggle="modal"
+                                    data-bs-target="#registroclienteModal">
+                                    Registrar cliente
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#listarregistradosModal">
+                                    listar registrados
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Tiendas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#registroModal">
+                                    Registrar tienda
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#listarModal">
+                                    listar tiendas
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- Botones alineados a la derecha -->
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                        Iniciar sesión
+                    </button>
+                    <a href="registrarse.html" class="btn btn-primary">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección principal -->
+    <section class="container py-5">
+        <div class="col-lg-6">
+            <span class="badge rounded-pill bg-warning-subtle text-dark px-3 py-2 mb-4">
+                ⚡ +15.000 tiendas registradas
+            </span>
+            <h1 class="display-5 fw-bold">
+                Encuentra tu <span class="text-primary">estilo</span>,<br> cerca de ti.
+            </h1>
+            <p class="text-secondary mt-4" style="max-width: 400px;">
+                Busca tiendas de ropa según el estilo que amas.
+                Desde streetwear hasta moda clásica. Encuentra
+                los mejores locales en tu ciudad al instante.
+            </p>
+            <div class="input-group mt-4" style="max-width: 330px;">
+                <input type="text" class="form-control border-dark">
+                <button class="btn btn-primary px-4">Buscar →</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Iniciar Sesión -->
+    <div class="modal fade" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Iniciar Sesión</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3 mt-3">
+                            <label for="email" class="form-label">Correo:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Ingresa tu contraseña">
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox"> Recordar contraseña
+                        </div>
+                        <a href="loginAccedido.html" type="submit" class="btn btn-primary">Entrar</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="listarModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Iniciar Sesión</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3 mt-3">
+                            <label for="email" class="form-label">Correo:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Ingresa tu contraseña">
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox"> Recordar contraseña
+                        </div>
+                        <a href="lista" type="submit" class="btn btn-primary">Entrar</a>
+                        <a href="registrarse.html" type="submit" class="btn btn-primary">registrarse</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Registro -->
+    <div class="modal fade" id="registroModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Iniciar Sesión</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3 mt-3">
+                            <label for="email" class="form-label">Correo:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Ingresa tu contraseña">
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox"> Recordar contraseña
+                        </div>
+                        <a href="lista" type="submit" class="btn btn-primary">Entrar</a>
+                        <a href="registrarse.html" type="submit" class="btn btn-primary">registrarse</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="registroclienteModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Iniciar Sesión</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3 mt-3">
+                            <label for="email" class="form-label">Correo:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Ingresa tu contraseña">
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox"> Recordar contraseña
+                        </div>
+                        <a href="lista" type="submit" class="btn btn-primary">Entrar</a>
+                        <a href="registrarse.html" type="submit" class="btn btn-primary">registrarse</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="listarregistradosModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Iniciar Sesión</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3 mt-3">
+                            <label for="email" class="form-label">Correo:</label>
+                            <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo">
+                        </div>
+                        <div class="mb-3">
+                            <label for="pwd" class="form-label">Contraseña:</label>
+                            <input type="password" class="form-control" id="pwd" placeholder="Ingresa tu contraseña">
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox"> Recordar contraseña
+                        </div>
+                        <a href="lista" type="submit" class="btn btn-primary">Entrar</a>
+                        <a href="registrarse.html" type="submit" class="btn btn-primary">registrarse</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts necesarios -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
