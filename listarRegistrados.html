@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,53 +47,400 @@
     }
   </style>
 </head>
+
 <body>
   <nav class="navbar navbar-custom bg-white">
     <div class="container-fluid px-4">
       <div class="d-flex align-items-center gap-3">
         <div class="logo">
-          <svg width="17" height="17" viewBox="0 0 24 24"
-               fill="none" stroke="white" stroke-width="2">
-            <rect x="3" y="4" width="18" height="17" rx="2"/>
-            <path d="M8 4V2h8v2"/>
-            <path d="M8 9h8"/>
-            <path d="M8 13h5"/>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <rect x="3" y="4" width="18" height="17" rx="2" />
+            <path d="M8 4V2h8v2" />
+            <path d="M8 9h8" />
+            <path d="M8 13h5" />
           </svg>
         </div>
         <span class="brand-name"><a href="loginAccedido.html">ClothingFinder</a></span>
       </div>
-      <a href="index.html"class="btn btn-primary register-btn" class="btn btn-primary register-btn">cerrar sesion</a>
+      <a href="index.html" class="btn btn-primary register-btn" class="btn btn-primary register-btn">cerrar sesion</a>
     </div>
   </nav>
-  <div class="container mt-3">
+   <div class="container mt-3">
     <h2>Tabla con DataTables</h2>
     <table id="example" class="table table-striped" style="width:100%">
       <thead>
         <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
+          <th>Nombre</th>
           <th>Email</th>
+          <th>Acciones</th> <!-- Nueva columna -->
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>John</td>
-          <td>Doe</td>
-          <td>john@example.com</td>
+          <td>miguel f.</td>
+          <td>mg@example.com</td>
+          <td>
+            <button class="btn btn-primary btn-sm " data-bs-toggle="modal" data-bs-target="#verdetalles1">Ver
+              detalle</button>
+            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editar1">Editar</button>
+            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#eliminar1">Eliminar</button>
+          </td>
         </tr>
         <tr>
-          <td>Mary</td>
-          <td>Moe</td>
-          <td>mary@example.com</td>
+          <td>sofia o.
+          </td>
+          <td>so@example.com</td>
+          <td>
+            <button class="btn btn-primary btn-sm " data-bs-toggle="modal" data-bs-target="#verdetalles2">Ver
+              detalle</button>
+            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editar2">Editar</button>
+            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#eliminar2">Eliminar</button>
+          </td>
         </tr>
         <tr>
-          <td>July</td>
-          <td>Dooley</td>
-          <td>july@example.com</td>
+          <td>zara r.</td>
+          <td>zara@example.com</td>
+          <td>
+            <button class="btn btn-primary btn-sm " data-bs-toggle="modal" data-bs-target="#verdetalles3">Ver
+              detalle</button>
+            <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editar3">Editar</button>
+            <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#eliminar3">Eliminar</button>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
+  <div class="modal" id="verdetalles1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">info empleado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="mb-3 mt-3">
+              <label for="name" class="form-label">nombre completo:</label>
+              <input type="text" class="form-control" id="name" placeholder="Ingresa tu correo" disabled
+                value="sft-medellin">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="direccion" class="form-label">direccion:</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Ingresa tu direccion" disabled
+                value="calle 65B #54-95">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Correo:</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" disabled
+                value="stf@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="tel" class="form-label">telefono:</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu telefono" disabled
+                value="300-55-57-779">
+            </div>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="verdetalles2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Headinginfo empleado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="mb-3 mt-3">
+              <label for="name" class="form-label">nombre completo:</label>
+              <input type="text" class="form-control" id="name" placeholder="Ingresa tu correo" disabled value="gucci">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="direccion" class="form-label">direccion:</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Ingresa tu direccion" disabled
+                value="calle 68B #59-91">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Correo:</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" disabled
+                value="gucii@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="tel" class="form-label">telefono:</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu telefono" disabled
+                value="302-53-54-775">
+            </div>
+          </form>
+        </div>
+
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="verdetalles3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">info empleado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="mb-3 mt-3">
+              <label for="name" class="form-label">nombre completo:</label>
+              <input type="text" class="form-control" id="name" placeholder="Ingresa tu correo" disabled value="zara">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="direccion" class="form-label">direccion:</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Ingresa tu direccion" disabled
+                value="calle 64B #53-85">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Correo:</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo" disabled
+                value="zara@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="tel" class="form-label">telefono:</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu telefono" disabled
+                value="301-52-53-774">
+            </div>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="editar1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">info empleado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="mb-3 mt-3">
+              <label for="name" class="form-label">nombre completo:</label>
+              <input type="text" class="form-control" id="name" placeholder="Ingresa tu correo" value="sft-medellin">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="direccion" class="form-label">direccion:</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Ingresa tu direccion"
+                value="calle 65B #54-95">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Correo:</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo"
+                value="stf@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="tel" class="form-label">telefono:</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu telefono"
+                value="300-55-57-779">
+            </div>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="editar2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">info empleado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="mb-3 mt-3">
+              <label for="name" class="form-label">nombre completo:</label>
+              <input type="text" class="form-control" id="name" placeholder="Ingresa tu correo" value="gucci">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="direccion" class="form-label">direccion:</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Ingresa tu direccion"
+                value="calle 68B #59-91">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Correo:</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo"
+                value="gucii@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="tel" class="form-label">telefono:</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu telefono"
+                value="302-53-54-775">
+            </div>
+          </form>
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="editar3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">info empleado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <form>
+            <div class="mb-3 mt-3">
+              <label for="name" class="form-label">nombre completo:</label>
+              <input type="text" class="form-control" id="name" placeholder="Ingresa tu correo" value="zara">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="direccion" class="form-label">direccion:</label>
+              <input type="text" class="form-control" id="direccion" placeholder="Ingresa tu direccion"
+                value="calle 64B #53-85">
+            </div>
+            <div class="mb-3 mt-3">
+              <label for="email" class="form-label">Correo:</label>
+              <input type="email" class="form-control" id="email" placeholder="Ingresa tu correo"
+                value="zara@example.com">
+            </div>
+            <div class="mb-3">
+              <label for="tel" class="form-label">telefono:</label>
+              <input type="tel" class="form-control" id="telefono" placeholder="Ingresa tu telefono"
+                value="301-52-53-774">
+            </div>
+          </form>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="eliminar1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">eliminado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="eliminar2">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">info empleado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="eliminar3">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">info empleado</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.datatables.net/3.0.3/js/dataTables.min.js"></script>
   <script src="https://cdn.datatables.net/3.0.3/js/dataTables.bootstrap5.min.js"></script>
@@ -101,4 +449,5 @@
     new DataTable('#example');
   </script>
 </body>
+
 </html>
